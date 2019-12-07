@@ -738,10 +738,10 @@ export type TrunkCargo = {
 };
 
 
-export type LunchListQueryVariables = {};
+export type LaunchListQueryVariables = {};
 
 
-export type LunchListQuery = (
+export type LaunchListQuery = (
   { __typename?: 'Query' }
   & { launches: Maybe<Array<Maybe<(
     { __typename?: 'Launch' }
@@ -773,8 +773,8 @@ export type LaunchProfileQuery = (
 );
 
 
-export const LunchListDocument = gql`
-    query LunchList {
+export const LaunchListDocument = gql`
+    query LaunchList {
   launches {
     flight_number
     mission_name
@@ -782,48 +782,48 @@ export const LunchListDocument = gql`
   }
 }
     `;
-export type LunchListComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<LunchListQuery, LunchListQueryVariables>, 'query'>;
+export type LaunchListComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<LaunchListQuery, LaunchListQueryVariables>, 'query'>;
 
-    export const LunchListComponent = (props: LunchListComponentProps) => (
-      <ApolloReactComponents.Query<LunchListQuery, LunchListQueryVariables> query={LunchListDocument} {...props} />
+    export const LaunchListComponent = (props: LaunchListComponentProps) => (
+      <ApolloReactComponents.Query<LaunchListQuery, LaunchListQueryVariables> query={LaunchListDocument} {...props} />
     );
     
-export type LunchListProps<TChildProps = {}> = ApolloReactHoc.DataProps<LunchListQuery, LunchListQueryVariables> | TChildProps;
-export function withLunchList<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
+export type LaunchListProps<TChildProps = {}> = ApolloReactHoc.DataProps<LaunchListQuery, LaunchListQueryVariables> | TChildProps;
+export function withLaunchList<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
-  LunchListQuery,
-  LunchListQueryVariables,
-  LunchListProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, LunchListQuery, LunchListQueryVariables, LunchListProps<TChildProps>>(LunchListDocument, {
-      alias: 'lunchList',
+  LaunchListQuery,
+  LaunchListQueryVariables,
+  LaunchListProps<TChildProps>>) {
+    return ApolloReactHoc.withQuery<TProps, LaunchListQuery, LaunchListQueryVariables, LaunchListProps<TChildProps>>(LaunchListDocument, {
+      alias: 'launchList',
       ...operationOptions
     });
 };
 
 /**
- * __useLunchListQuery__
+ * __useLaunchListQuery__
  *
- * To run a query within a React component, call `useLunchListQuery` and pass it any options that fit your needs.
- * When your component renders, `useLunchListQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * To run a query within a React component, call `useLaunchListQuery` and pass it any options that fit your needs.
+ * When your component renders, `useLaunchListQuery` returns an object from Apollo Client that contains loading, error, and data properties 
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useLunchListQuery({
+ * const { data, loading, error } = useLaunchListQuery({
  *   variables: {
  *   },
  * });
  */
-export function useLunchListQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<LunchListQuery, LunchListQueryVariables>) {
-        return ApolloReactHooks.useQuery<LunchListQuery, LunchListQueryVariables>(LunchListDocument, baseOptions);
+export function useLaunchListQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<LaunchListQuery, LaunchListQueryVariables>) {
+        return ApolloReactHooks.useQuery<LaunchListQuery, LaunchListQueryVariables>(LaunchListDocument, baseOptions);
       }
-export function useLunchListLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<LunchListQuery, LunchListQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<LunchListQuery, LunchListQueryVariables>(LunchListDocument, baseOptions);
+export function useLaunchListLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<LaunchListQuery, LaunchListQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<LaunchListQuery, LaunchListQueryVariables>(LaunchListDocument, baseOptions);
         }
-export type LunchListQueryHookResult = ReturnType<typeof useLunchListQuery>;
-export type LunchListLazyQueryHookResult = ReturnType<typeof useLunchListLazyQuery>;
-export type LunchListQueryResult = ApolloReactCommon.QueryResult<LunchListQuery, LunchListQueryVariables>;
+export type LaunchListQueryHookResult = ReturnType<typeof useLaunchListQuery>;
+export type LaunchListLazyQueryHookResult = ReturnType<typeof useLaunchListLazyQuery>;
+export type LaunchListQueryResult = ApolloReactCommon.QueryResult<LaunchListQuery, LaunchListQueryVariables>;
 export const LaunchProfileDocument = gql`
     query LaunchProfile($id: String!) {
   launch(id: $id) {

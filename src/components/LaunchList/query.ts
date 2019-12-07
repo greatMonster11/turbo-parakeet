@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 
 export const QUERY_LUNCH_LIST = gql`
-  query LunchList {
+  query LaunchList {
     launches {
       flight_number
       mission_name
